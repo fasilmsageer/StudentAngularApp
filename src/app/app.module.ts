@@ -7,6 +7,27 @@ import { StudentEntryComponent } from './student-entry/student-entry.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
 import { DeleteStudentComponent } from './delete-student/delete-student.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+
+const myRoute=[
+{
+  path:"",
+  component:StudentEntryComponent
+},
+{
+  path:"view",
+  component:StudentViewComponent
+},
+{
+  path:"search",
+  component:SearchStudentComponent
+},
+{
+  path:"delete",
+  component:DeleteStudentComponent
+}
+]
 
 @NgModule({
   declarations: [
@@ -14,11 +35,13 @@ import { DeleteStudentComponent } from './delete-student/delete-student.componen
     StudentEntryComponent,
     StudentViewComponent,
     SearchStudentComponent,
-    DeleteStudentComponent
+    DeleteStudentComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
